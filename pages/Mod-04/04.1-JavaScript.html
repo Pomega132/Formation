@@ -12,36 +12,14 @@
     <script src="/Scripts/jquery-1.10.2.js"></script>
     <script src="/Scripts/bootstrap.min.js"></script>
     <script src="/Navigation/JS-Navigation.js"></script>
-
-
-
 </head>
 
 <body>
     <header id="header" class="container"></header>
-    <input type="button" onclick="SayHelloJS();" value="Say Hello !" />
+    <input id="btn" type="button" value="Say Hello !" />
     <div id="message"></div>
 
-    <script>
-        // $(document).ready(function () {
-        //     //Action sur le DOM
-
-        // })
-
-        function SayHelloJS() {
-            var el = document.getElementById('message');
-            if (el != null)
-                el.innerText = "Hello World !";
-        }
-
-        function AddListener() {
-            var el = document.getElementById("btn");
-            if (el != null)
-                el.addEventListener("click", SayHelloJS);
-        }
-
-        window.onload = AddListener;
-    </script>
+    <script src="04.1-JavaScript.js"></script>
 </body>
 
 </html>
