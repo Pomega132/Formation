@@ -1,0 +1,42 @@
+@import url('/styles/default.css');
+:root {
+    --Test: 1px solid black;
+}
+
+/* Tableau */
+
+.dtable {
+    display: table;
+}
+
+.drow {
+    display: table-row;
+    border: var(--Test);
+}
+
+.dcell {
+    display: table-cell;
+    border: var(--Test);
+}
+
+.dcell > img:hover {
+    animation: scaleImage2 2s;
+}
+
+@keyframes scaleImage2 {
+    0% {
+        transform: scale(1);
+        border: 0;
+    }
+    25% {
+        transform: scale(1.2);
+        border: 5px solid gray;
+    }
+    75% {
+        border: 5px solid white
+    }
+    100% {
+        transform: scale(1);
+        border: 0px solid;
+    }
+}
