@@ -19,24 +19,42 @@
     border: var(--Test);
 }
 
+.dcell > img {
+    animation: leave 0.5s;
+    opacity: 0.2;
+}
+
 .dcell > img:hover {
-    animation: scaleImage2 2s;
+    animation: scaleImage2 0.5s;
+    opacity: 1;
+}
+
+.selected input {
+    font-size: large;
+    font: bold;
+    color: black;
+    background: orange;
+}
+
+@keyframes leave{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0.2;
+    }
 }
 
 @keyframes scaleImage2 {
     0% {
         transform: scale(1);
-        border: 0;
+        opacity: 0.2;
     }
     25% {
         transform: scale(1.2);
-        border: 5px solid gray;
-    }
-    75% {
-        border: 5px solid white
     }
     100% {
         transform: scale(1);
-        border: 0px solid;
+        opacity: 1;
     }
 }
