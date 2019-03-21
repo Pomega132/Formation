@@ -26,7 +26,8 @@ $(document).ready(function () {
     $('.dcell>img')
         .mouseenter(MouseEnterHandler)
         .mouseout(MouseOutHandler)
-        .click(ClickHandler);
+        .click(ClickHandler)
+        .contextmenu(ContextMenuHandler);
 
     //Abonnement à la perte de focus et au changement dans la TextBox
     //Vérifie si une commande est passée
@@ -66,8 +67,8 @@ $(document).ready(function () {
     }
 
     function AddCommande(articleName, quantity) {
-        var article = Commandes.find(function (article) {
-            article.Get_Name() == articleName
+        var article = Commandes.find(function (a) {
+            a.Get_Name() == articleName
         });
 
         if (article)
@@ -85,8 +86,8 @@ $(document).ready(function () {
         if (article)
             Commandes.pop(article);
 
-            if(Commandes.length == 0)
-        $("#btnOrder").addClass("disabled");
+        if (Commandes.length == 0)
+            $("#btnOrder").addClass("disabled");
     }
 
     //MouseClick
@@ -124,5 +125,16 @@ $(document).ready(function () {
     //l'événement click du bouton
     function ClickHandler(event) {
         $(this).siblings("input").val(Number($(this).siblings("input").val()) + 1).change();
+    }
+
+    /**
+     *
+     * @param {jQuery.Event} event
+     */
+    function ContextMenuHandler(event) {
+        if ($(this).siblings("input").val() > 0)
+            $(this).siblings("input").val(Number($(this).siblings("input").val()) - 1).change();
+
+        event.preventDefault();
     }
 });

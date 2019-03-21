@@ -19,12 +19,12 @@
     border: var(--Test);
 }
 
-.dcell > img {
+.dcell>img {
     animation: leave 0.5s;
     opacity: 0.2;
 }
 
-.dcell > img:hover {
+.dcell>img:hover {
     animation: scaleImage2 0.5s;
     opacity: 1;
 }
@@ -36,11 +36,11 @@
     background: orange;
 }
 
-@keyframes leave{
-    0%{
+@keyframes leave {
+    0% {
         opacity: 1;
     }
-    100%{
+    100% {
         opacity: 0.2;
     }
 }
